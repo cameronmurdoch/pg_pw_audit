@@ -1,0 +1,5 @@
+# pg_pw_audit extension
+comment = 'log when passwords are changed'
+default_version = '0.1'
+module_pathname = '$libdir/pg_pw_audit'
+relocatable = false

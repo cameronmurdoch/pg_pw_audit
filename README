@@ -1,0 +1,30 @@
+PostgreSQL extension to record when a database user's password is changed.
+
+Experimental - there will be bugs.
+
+This works, but is definitly alpha quality and currently only been tested
+against PostgreSQL 14 on RHEL8.
+
+Also, let's be clear. If you have a lot of users, or some other complicated
+requirements then you should probably be using some other form of password
+management.
+
+For example:
+
+1. TLS certificates
+2. Kerberos/GSSAPI
+3. LDAP - sends password in cleartext, use with TLS if no other choice
+4. PAM with whatever plugin make you happy
+
+Certificates and GSSAPI should probably be the preferred choices in most
+situations.
+
+However sometimes the above aren't availble or aren't appropriate.
+The scram-sha-256 authentication in Postgres >= 10 is really nice, but it is
+frustrating to not know when a password was changed and possibly who changed it.
+
+What action you choose to take with this information is up to you. Forcing users
+to change their passwords frequently could be a bad idea and can actually lead
+to *reduced* security.
+
+However, as mentioned it is still nice to know when a password was last changed.
