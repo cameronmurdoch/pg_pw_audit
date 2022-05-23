@@ -2,7 +2,7 @@ PostgreSQL extension to record when a database user's password is changed.
 
 Experimental - there will be bugs.
 
-This works, but is definitly alpha quality and currently only been tested
+This works, but is definitly alpha quality and currently has only been tested
 against PostgreSQL 14 on RHEL8.
 
 Also, let's be clear. If you have a lot of users, or some other complicated
